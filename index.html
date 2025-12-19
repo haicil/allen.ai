@@ -104,6 +104,39 @@
       margin-bottom: 0.5rem;
     }
 
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tab-button {
+      font-family: 'Montserrat', sans-serif;
+      background: none;
+      border: 1px solid black;
+      padding: 0.5rem 1.2rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+
+    .tab-button:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .tab-button.active {
+      background: black;
+      color: #f5f0e6; /* beige */
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -126,6 +159,7 @@
 
     <nav>
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -135,28 +169,65 @@
     <h2>About Me</h2>
     <p>
       I am a sophomore studying Electrical and Computer Engineering at The University of Texas at Austin with a strong interest in hardware design, electronics, and
-      embedded systems. I enjoy working across the full hardware development lifecycle, from design and optimization to testing and verification. I enjoy working and
-      collaborating in team environments to streamline development and contribute to a positive community. I am committed to expanding my knowledge and developing
-      my technical skills to create impact through real-world applications.
+      embedded systems. I enjoy working across the full hardware development lifecycle, from design and optimization to testing and verification. I enjoy collaborating
+      in team environments to streamline development and contribute to a positive community, and I am committed to expanding my knowledge and developing my technical
+      skills to create impact through real-world applications.
+      
+      I am currently involved in University of Texas Institute of Electrical and Electronics Engineers Robotics and Automation Society (UT IEEE RAS) as an officer and
+      the fundraising coordinator. RAS is one of UT Austin's largest robotics organizations, and we are dedicated to making robotics and robotics education more accessible
+      for all.
+      <a href="https://hcb.hackclub.com/donations/start/austin-ieee-ras"">Consider donating to support our mission and our projects!</a>
     </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Programming: Python, Java, C/C++, LC-3 Assembly</li>
+      <li>Embedded & Hardware: Arduino, circuit design, testing & validation, PCB assembly</li>
+      <li>EDA & Simulation: KiCad, LTspice, WaveForms</li>
+      <li>CAD & Mechanical: OnShape, SOLIDWORKS, Fusion 360</li>
+      <li>Tools: Git, Notion, Microsoft Office</li>
+    </ul>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Project One</h3>
-        <p>Short description of what you built and what technologies you used.</p>
-      </div>
 
-      <div class="project-card">
-        <h3>Project Two</h3>
-        <p>Another project description—focus on impact and skills.</p>
-      </div>
+    <div class="tabs">
+      <button class="tab-button active" data-year="2025">2025</button>
+      <button class="tab-button" data-year="2024">2024</button>
+      <button class="tab-button" data-year="2023">2023</button>
+    </div>
 
-      <div class="project-card">
-        <h3>Project Three</h3>
-        <p>Highlight engineering challenges and solutions.</p>
+    <div class="tab-content active" id="2025">
+      <div class="projects">
+        <div class="project-card">
+          <h3>Autonomous Drone Controller</h3>
+          <p>Flight control firmware using PID and sensor fusion.</p>
+        </div>
+        <div class="project-card">
+          <h3>Custom Mechanical Keyboard</h3>
+          <p>PCB design, firmware, and case manufacturing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="2024">
+      <div class="projects">
+        <div class="project-card">
+          <h3>Line-Following Robot</h3>
+          <p>Embedded control using STM32 and IR sensors.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="2023">
+      <div class="projects">
+        <div class="project-card">
+          <h3>Arduino Weather Station</h3>
+          <p>Temperature, humidity, and pressure logging.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -171,6 +242,24 @@
   <footer>
     © 2025 Allen Ai
   </footer>
+
+<script>
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const year = button.dataset.year;
+
+      tabButtons.forEach(btn => btn.classList.remove("active"));
+      tabContents.forEach(content => content.classList.remove("active"));
+
+      button.classList.add("active");
+      document.getElementById(year).classList.add("active");
+    });
+  });
+</script>
+
 
 </body>
 </html>
