@@ -100,6 +100,29 @@
       margin-bottom: 1.5rem;
     }
 
+    .about-container {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .about-text {
+      flex: 2;
+    }
+
+    .about-image {
+      flex: 1;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 12px;
+      display: block;
+      border: 1px solid rgba(0,0,0,0.2);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
     section p {
       font-weight: 400;
       margin-bottom: 1rem;
@@ -230,21 +253,32 @@
   </header>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi, my name is Allen! I am a sophomore studying Electrical and Computer Engineering at The University of Texas at Austin with a strong interest in hardware design,
-      electronics, and embedded systems. I enjoy working across the full hardware development lifecycle, from design and optimization to testing and verification. I also
-      enjoy collaborating in team environments to streamline development and contribute to a positive community, and I am committed to expanding my knowledge and
-      developing my technical skills to create impact through real-world applications.
-    </p>
-    
-    <p>
-      I am currently involved in University of Texas at Austin Institute of Electrical and Electronics Engineers Robotics and Automation Society (UT IEEE RAS) as an
-      officer and the fundraising coordinator. UT IEEE RAS is one of UT Austin's largest robotics organizations, and we are dedicated to making robotics and robotics
-      education more accessible for all.
-      <a href="https://hcb.hackclub.com/donations/start/austin-ieee-ras">Consider donating to support our mission and our projects!</a>
-    </p>
-  </section>
+  <h2>About Me</h2>
+
+  <div class="about-container">
+    <div class="about-text">
+      <p>
+        Hi, my name is Allen! I am a sophomore studying Electrical and Computer Engineering at The University of Texas at Austin with a strong interest in hardware design,
+        electronics, and embedded systems. I enjoy working across the full hardware development lifecycle, from design and optimization to testing and verification. I also
+        enjoy collaborating in team environments to streamline development and contribute to a positive community, and I am committed to expanding my knowledge and
+        developing my technical skills to create impact through real-world applications.
+      </p>
+
+      <p>
+        I am currently involved in University of Texas at Austin Institute of Electrical and Electronics Engineers Robotics and Automation Society (UT IEEE RAS) as an
+        officer and the fundraising coordinator. UT IEEE RAS is one of UT Austin's largest robotics organizations, and we are dedicated to making robotics and robotics
+        education more accessible for all.
+        <a href="https://hcb.hackclub.com/donations/start/austin-ieee-ras">
+          Consider donating to support our mission and our projects!
+        </a>
+      </p>
+    </div>
+
+    <div class="about-image">
+      <img src="images/portrait.jpg" alt="Portrait of Me">
+    </div>
+  </div>
+</section>
 
   <section id="skills">
     <h2>Skills</h2>
