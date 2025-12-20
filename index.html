@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
 
   <style>
     :root {
@@ -69,7 +71,7 @@
     section {
       max-width: 900px;
       margin: 0 auto;
-      padding: 4rem 2rem;
+      padding: 1rem 2rem;
     }
 
     section h2 {
@@ -141,6 +143,23 @@
       display: block;
     }
 
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: black;
+      font-size: 1.8rem;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      opacity: 0.7;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -172,16 +191,16 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am a sophomore studying Electrical and Computer Engineering at The University of Texas at Austin with a strong interest in hardware design, electronics, and
-      embedded systems. I enjoy working across the full hardware development lifecycle, from design and optimization to testing and verification. I enjoy collaborating
-      in team environments to streamline development and contribute to a positive community, and I am committed to expanding my knowledge and developing my technical
-      skills to create impact through real-world applications.
+      Hi, my name is Allen! I am a sophomore studying Electrical and Computer Engineering at The University of Texas at Austin with a strong interest in hardware design,
+      electronics, and embedded systems. I enjoy working across the full hardware development lifecycle, from design and optimization to testing and verification. I also
+      enjoy collaborating in team environments to streamline development and contribute to a positive community, and I am committed to expanding my knowledge and
+      developing my technical skills to create impact through real-world applications.
     </p>
     
     <p>
-      I am currently involved in University of Texas Institute of Electrical and Electronics Engineers Robotics and Automation Society (UT IEEE RAS) as an officer and
-      the fundraising coordinator. RAS is one of UT Austin's largest robotics organizations, and we are dedicated to making robotics and robotics education more accessible
-      for all.
+      I am currently involved in University of Texas at Austin Institute of Electrical and Electronics Engineers Robotics and Automation Society (UT IEEE RAS) as an
+      officer and the fundraising coordinator. UT IEEE RAS is one of UT Austin's largest robotics organizations, and we are dedicated to making robotics and robotics
+      education more accessible for all.
       <a href="https://hcb.hackclub.com/donations/start/austin-ieee-ras"">Consider donating to support our mission and our projects!</a>
     </p>
   </section>
@@ -190,7 +209,7 @@
     <h2>Skills</h2>
     <ul>
       <li>Programming: Python, Java, C/C++, LC-3 Assembly</li>
-      <li>Embedded & Hardware: Arduino, circuit design, testing & validation, PCB assembly</li>
+      <li>Embedded & Hardware: Arduino, ESP32, circuit design, testing, verification, PCB assembly</li>
       <li>EDA & Simulation: KiCad, LTspice, WaveForms</li>
       <li>CAD & Mechanical: OnShape, SOLIDWORKS, Fusion 360</li>
       <li>Tools: Git, Notion, Microsoft Office</li>
@@ -203,37 +222,68 @@
     <div class="tabs">
       <button class="tab-button active" data-year="2025">2025</button>
       <button class="tab-button" data-year="2024">2024</button>
-      <button class="tab-button" data-year="2023">2023</button>
     </div>
 
     <div class="tab-content active" id="2025">
       <div class="projects">
-        <div class="project-card">
-          <h3>Autonomous Drone Controller</h3>
-          <p>Flight control firmware using PID and sensor fusion.</p>
-        </div>
-        <div class="project-card">
-          <h3>Custom Mechanical Keyboard</h3>
-          <p>PCB design, firmware, and case manufacturing.</p>
-        </div>
+        <a href="projects/rtc.html" class="project-card">
+          <img src="images/rtc.jpg" alt="Offline Real-Time Clock project image">
+          <div class="project-info">
+            <h3>Offline Real-Time Clock</h3>
+            <p>Real-time clock board using PCF8563 and a 5 Farad double layer supercapactior to correct the internal clock of the robot's NVIDIA Jetson Orin Nano
+              (microcontroller) when it is not connected to internet and a power source. Designed in KiCad.</p>
+          </div>
+        </a>
+        <a href="projects/sensordev.html" class="project-card">
+          <img src="images/sensordev.jpg" alt="Sensor Development Board project image">
+          <div class="project-info">
+            <h3>Base Development Board for Sensor Modules</h3>
+            <p>Base development board employing a custom long-distance I2C differential pairing and daisy-chaining hardware architecture using PCA9615 I2C differential
+              bus buffer and LTC4316 single I2C device address translator to attach and deploy different module I2C sensor boards, i.e., color sensor (ISL29125),
+              proximity distance sensor (VL53L4CD), IMU motion sensor (ICM-20602), as well as solenoid relays and I2C GPIO breakouts (TCA9636DGKR). 
+            </p>
+          </div>
+        </a>
+        <a href="projects/chessbot.html" class="project-card">
+          <img src="images/chessbot.jpg" alt="Chessbot project image">
+          <div class="project-info">
+            <h3>Chessbot</h3>
+            <p>An automated chess-playing robot using an electromagnet gantry system and MQTT host communication architecture. Developed LCD UI with C using the Little
+              Video Graphics Library (LVGL) video graphics framework to enable direct user control for the robot states by pausing and homing the gantry.</p>
+          </div>
+        </a>
+        <a href="projects/keyboard.html" class="project-card">
+          <img src="images/keyboard.jpg" alt="Custom Mechanical Keyboard project image">
+          <div class="project-info">
+            <h3>Custom Mechanical Keyboard</h3>
+            <p>Custom 40% keyboard layout with key switch matrix interfaced to an RP2040 microcontroller and bootloader with a custom configured keymap using QMKFirmware</p>
+          </div>
+        </a>
       </div>
-    </div>
 
     <div class="tab-content" id="2024">
       <div class="projects">
-        <div class="project-card">
-          <h3>Line-Following Robot</h3>
-          <p>Embedded control using STM32 and IR sensors.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-content" id="2023">
-      <div class="projects">
-        <div class="project-card">
-          <h3>Arduino Weather Station</h3>
-          <p>Temperature, humidity, and pressure logging.</p>
-        </div>
+        <a href="projects/kfc.html" class="project-card">
+          <img src="images/kfc.jpg" alt="Kentucky Friend Circuits project image">
+          <div class="project-info">
+            <h3>Kentucky Fried Circuits</h3>
+            <p>Flight control firmware using PID and sensor fusion.</p>
+          </div>
+        </a>
+        <a href="projects/idci.html" class="project-card">
+          <img src="images/idci.jpg" alt="I.D.C.I project image">
+          <div class="project-info">
+            <h3>I.D.C.I</h3>
+            <p>PCB design, firmware, and case manufacturing.</p>
+          </div>
+        </a>
+        <a href="projects/smarttrak.html" class="project-card">
+          <img src="images/smarttrak.jpg" alt="SmartTrak Wallet project image">
+          <div class="project-info">
+            <h3>SmartTrak Wallet</h3>
+            <p>PCB design, firmware, and case manufacturing.</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -241,8 +291,14 @@
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: allen.haici.ai@gmail.com</p>
-    <p>GitHub: github.com/haicil</p>
-    <p>LinkedIn: linkedin.com/in/allen.haici.ai</p>
+    <div class="social-links">
+      <a href="https://github.com/haicil" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/allen-haici-ai" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
   </section>
 
   <footer>
