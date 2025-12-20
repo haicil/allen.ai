@@ -96,13 +96,30 @@
     }
 
     .project-card {
-      border: 1px solid var(--accent-color);
       padding: 1.5rem;
       transition: transform 0.2s ease;
+      display: block;
+      text-decoration: none;
+      color: black;
+      border: 1px solid black;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-info {
+      padding: 1rem;
     }
 
     .project-card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .project-card h3 {
@@ -230,33 +247,24 @@
           <img src="images/rtc.jpg" alt="Offline Real-Time Clock project image">
           <div class="project-info">
             <h3>Offline Real-Time Clock</h3>
-            <p>Real-time clock board using PCF8563 and a 5 Farad double layer supercapactior to correct the internal clock of the robot's NVIDIA Jetson Orin Nano
-              (microcontroller) when it is not connected to internet and a power source. Designed in KiCad.</p>
           </div>
         </a>
         <a href="projects/sensordev.html" class="project-card">
           <img src="images/sensordev.jpg" alt="Sensor Development Board project image">
           <div class="project-info">
             <h3>Base Development Board for Sensor Modules</h3>
-            <p>Base development board employing a custom long-distance I2C differential pairing and daisy-chaining hardware architecture using PCA9615 I2C differential
-              bus buffer and LTC4316 single I2C device address translator to attach and deploy different module I2C sensor boards, i.e., color sensor (ISL29125),
-              proximity distance sensor (VL53L4CD), IMU motion sensor (ICM-20602), as well as solenoid relays and I2C GPIO breakouts (TCA9636DGKR). 
-            </p>
           </div>
         </a>
         <a href="projects/chessbot.html" class="project-card">
           <img src="images/chessbot.jpg" alt="Chessbot project image">
           <div class="project-info">
             <h3>Chessbot</h3>
-            <p>An automated chess-playing robot using an electromagnet gantry system and MQTT host communication architecture. Developed LCD UI with C using the Little
-              Video Graphics Library (LVGL) video graphics framework to enable direct user control for the robot states by pausing and homing the gantry.</p>
           </div>
         </a>
         <a href="projects/keyboard.html" class="project-card">
           <img src="images/keyboard.jpg" alt="Custom Mechanical Keyboard project image">
           <div class="project-info">
             <h3>Custom Mechanical Keyboard</h3>
-            <p>Custom 40% keyboard layout with key switch matrix interfaced to an RP2040 microcontroller and bootloader with a custom configured keymap using QMKFirmware</p>
           </div>
         </a>
       </div>
@@ -267,21 +275,18 @@
           <img src="images/kfc.jpg" alt="Kentucky Friend Circuits project image">
           <div class="project-info">
             <h3>Kentucky Fried Circuits</h3>
-            <p>Flight control firmware using PID and sensor fusion.</p>
           </div>
         </a>
         <a href="projects/idci.html" class="project-card">
           <img src="images/idci.jpg" alt="I.D.C.I project image">
           <div class="project-info">
             <h3>I.D.C.I</h3>
-            <p>PCB design, firmware, and case manufacturing.</p>
           </div>
         </a>
         <a href="projects/smarttrak.html" class="project-card">
           <img src="images/smarttrak.jpg" alt="SmartTrak Wallet project image">
           <div class="project-info">
             <h3>SmartTrak Wallet</h3>
-            <p>PCB design, firmware, and case manufacturing.</p>
           </div>
         </a>
       </div>
