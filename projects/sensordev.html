@@ -75,7 +75,9 @@
     }
 
     section {
-      margin-bottom: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
       line-height: 1.15;
     }
 
@@ -107,9 +109,9 @@
     <img src="../images/logo.png" alt="Allen Ai logo">
   </a>
 
-  <a href="../index.html" style="display:inline-block; margin-top:0.5rem;">← Back to Projects</a>
+  <a href="../index.html" style="display:inline-block; margin-top:3.5rem;">← Back to Projects</a>
 
-  <div style="height: 2.5rem;"></div>
+  <div style="height: 0.5rem;"></div>
 
   <h1>Base Development Board for Sensor Modules</h1>
   <h2>09/2025 - Present</h2>
@@ -119,7 +121,9 @@
   </div>
 
   <section>
-    <div class="underlined-title">Overview</div>
+    <div class="underlined-title">
+      <h2>Overview</h2>
+    </div>
 
     <p>I designed a base sensor deployment board in KiCad for the robotics team VEXU GHOST to connect and deploy different sensor modules, such as color sensor, distance sensor, and IMU, as well as I2C GPIO expander modules for limit switching.
         GHOST’s robots utilize large number of sensors to achieve various functionalities, and this is our solution to try integrating sensor clusters with faster clock speeds, better
@@ -129,7 +133,7 @@
     <p>
         The design utilizes a PCA9615DP differential I2C bus buffer, LTC4316 I2C address translator (for unique I2C addresses among identical sensors), and a 16-bit DAC with a rotary switch for the address translation. I optimized the layout and components so that the board follows the robot’s mounting size constraint and have less manufacturing costs (reduced by 20% compared to previous iterations). I also collaborated with other hardware members to assemble the boards through reflow soldering and microsoldering, as well as testing the boards to ensure valid electrical connections.
     </p>
-    
+
     <p>
         Currently, we are programming a data acquisition firmware in C++ that is configurable to ROS2 publihing nodes to poll sensor data from deployment boards and send it to the Jetson Orin Nano via USB serial in order to process the sensor information for our robot's automation.
     </p>
@@ -138,7 +142,9 @@
     
     <div style="height: 2.5rem;"></div>
 
-    <div class="underlined-title">Images</div>
+    <div class="underlined-title">
+      <h2>Images</h2>
+    </div>
     <div class="image-grid">
       <img src="../images/sensordev-4.png" alt="Sensor Development Board Back Model">
       <img src="../images/sensordev-2.png" alt="Sensor Development Board Schematic">
