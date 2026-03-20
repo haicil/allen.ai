@@ -35,6 +35,12 @@
       transform: scale(1.1);
     }
 
+    h2 {
+      border-bottom: 2px solid black;
+      padding-bottom: 0.3em;
+      margin-bottom: 1.2em;
+    }
+
     a {
       color: black;
       text-decoration: underline;
@@ -54,10 +60,16 @@
       margin-bottom: 1rem;
     }
 
+    .main-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .main-image img {
       width: 100%;
-      max-width: 700px;
-      max-height: 450px;
+      max-width: 900px;
+      max-height: 250px;
       border-radius: 6px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
@@ -67,9 +79,8 @@
       line-height: 1.15;
     }
 
-    section p {
-      line-height: 1.15;
-      margin-bottom: 1.5rem;
+    .overview-text {
+      flex: 2;
     }
 
     .image-grid {
@@ -95,7 +106,9 @@
     <img src="../images/logo.png" alt="Allen Ai logo">
   </a>
 
-  <a href="../index.html">← Back to Projects</a>
+  <a href="../index.html" style="display:inline-block; margin-top:2.5rem;">← Back to Projects</a>
+
+  <div style="height: 2.5rem;"></div>
 
   <h1>Base Development Board for Sensor Modules</h1>
   <h2>09/2025 - Present</h2>
@@ -106,16 +119,22 @@
 
   <section>
     <h2>Overview</h2>
-    <p>I designed a base sensor deployment board in KiCad for the robotics team VEXU GHOST to connect and deploy different sensor modules, such as color sensor, distance sensor, and IMU, as well as I2C GPIO expander modules for limit switching.
-        GHOST’s robots utilize large number of sensors to achieve various functionalities, and this is our solution to try integrating sensor clusters with faster clock speeds, better
-        signal integrity, and scalable cost efficiency. The board is part of a larger implementation of sensor integration using a custom hardware architecture with daisy-chaining differential I2C.
 
-        The design utilizes a PCA9615DP differential I2C bus buffer, LTC4316 I2C address translator (for unique I2C addresses among identical sensors), and a 16-bit DAC with a rotary switch for the address translation. I optimized the layout and components so that the board follows the robot’s mounting size constraint and have less manufacturing costs (reduced by 20% compared to previous iterations). I also collaborated with other hardware members to assemble the boards through reflow soldering and microsoldering, as well as testing the boards to ensure valid electrical connections.
+    <div class="overview-text">
+      <p>I designed a base sensor deployment board in KiCad for the robotics team VEXU GHOST to connect and deploy different sensor modules, such as color sensor, distance sensor, and IMU, as well as I2C GPIO expander modules for limit switching.
+          GHOST’s robots utilize large number of sensors to achieve various functionalities, and this is our solution to try integrating sensor clusters with faster clock speeds, better
+          signal integrity, and scalable cost efficiency. The board is part of a larger implementation of sensor integration using a custom hardware architecture with daisy-chaining differential I2C.
 
-        Currently, we are programming a data acquisition firmware in C++ that is configurable to ROS2 publihing nodes to poll sensor data from deployment boards and send it to the Jetson Orin Nano via USB serial in order to process the sensor information for our robot's automation.
-    </p>
+          The design utilizes a PCA9615DP differential I2C bus buffer, LTC4316 I2C address translator (for unique I2C addresses among identical sensors), and a 16-bit DAC with a rotary switch for the address translation. I optimized the layout and components so that the board follows the robot’s mounting size constraint and have less manufacturing costs (reduced by 20% compared to previous iterations). I also collaborated with other hardware members to assemble the boards through reflow soldering and microsoldering, as well as testing the boards to ensure valid electrical connections.
+
+          Currently, we are programming a data acquisition firmware in C++ that is configurable to ROS2 publihing nodes to poll sensor data from deployment boards and send it to the Jetson Orin Nano via USB serial in order to process the sensor information for our robot's automation.
+      </p>
+    </div>
+
     <a href="https://github.com/VEXU-GHOST/ghost_kicad">VEXU GHOST PCB Github Repository</a>
+    
     <div style="height: 2.5rem;"></div>
+
     <h2>Images</h2>
     <div class="image-grid">
       <img src="../images/sensordev-4.png" alt="Sensor Development Board Back Model">
