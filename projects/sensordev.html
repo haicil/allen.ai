@@ -50,10 +50,15 @@
 
   <section>
     <h2>Overview</h2>
-    <p>Base development board employing a custom long-distance I2C differential pairing and daisy-chaining hardware architecture using PCA9615 I2C differential
-        bus buffer and LTC4316 single I2C device address translator to attach and deploy different module I2C sensor boards, i.e., color sensor (ISL29125),
-        proximity distance sensor (VL53L4CD), IMU motion sensor (ICM-20602), as well as solenoid relays and I2C GPIO breakouts (TCA9636DGKR). Designed in KiCad.
+    <p>I designed a base sensor deployment board in KiCad for the robotics team VEXU GHOST to connect and deploy different sensor modules, such as color sensor, distance sensor, and IMU, as well as I2C GPIO expander modules for limit switching.
+        GHOST’s robots utilize large number of sensors to achieve various functionalities, and this is our solution to try integrating sensor clusters with faster clock speeds, better
+        signal integrity, and scalable cost efficiency. The board is part of a larger implementation of sensor integration using a custom hardware architecture with daisy-chaining differential I2C.
+
+        The design utilizes a PCA9615DP differential I2C bus buffer, LTC4316 I2C address translator (for unique I2C addresses among identical sensors), and a 16-bit DAC with a rotary switch for the address translation. I optimized the layout and components so that the board follows the robot’s mounting size constraint and have less manufacturing costs (reduced by 20% compared to previous iterations). I also collaborated with other hardware members to assemble the boards through reflow soldering and microsoldering, as well as testing the boards to ensure valid electrical connections.
+
+        Currently, we are programming a data acquisition firmware in C++ that is configurable to ROS2 publihing nodes to poll sensor data from deployment boards and send it to the Jetson Orin Nano via USB serial in order to process the sensor information for our robot's automation.
     </p>
+    <a href="https://github.com/VEXU-GHOST/ghost_kicad">VEXU GHOST PCB Github Repository</a>
     <img src="../images/sensordev-4.png" alt="Sensor Development Board Back Model project image" class="hero">
     <img src="../images/sensordev-2.png" alt="Sensor Development Board Schematic project image" class="hero">
     <img src="../images/sensordev-3.png" alt="Sensor Development Board PCB project image" class="hero">
