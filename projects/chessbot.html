@@ -35,6 +35,12 @@
       transform: scale(1.1);
     }
 
+    .underlined-title {
+      border-bottom: 2px solid black;
+      padding-bottom: 0.3em;
+      margin-bottom: 1.2em;
+    }
+
     a {
       color: black;
       text-decoration: none;
@@ -54,13 +60,22 @@
       margin-bottom: 1rem;
     }
 
+    .main-image img {
+      width: 100%;
+      max-width: 900px;
+      max-height: 250px;
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
     section {
       margin-bottom: 2rem;
-      line-height: 1.15;
+      line-height: 1.6;
     }
 
     section p {
-      line-height: 1.15;
+      font-weight: 400;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -70,23 +85,32 @@
     <img src="../images/logo.png" alt="Allen Ai logo">
   </a>
 
-  <a href="../index.html">← Back to Projects</a>
+  <a href="../index.html" style="display:inline-block; margin-top:3.5rem;">← Back to Projects</a>
 
-  <img src="../images/chessbot.jpg" alt="Chessbot" class="hero">
+  <div style="height: 0.4rem;"></div>
 
   <h1>Chessbot</h1>
   <h2>01/2025 - Present</h2>
 
+  <div class="main-image">
+    <img src="../images/chessbot.jpg" alt="Chessbot" class="hero">
+  </div>
+
   <section>
-    <h2>Overview</h2>
+    <div class="underlined-title">
+      <h2>Overview</h2>
+    </div>
+
     <p>I developed an embedded interface and display in C for an XPT2046 LCD to be used for Chessbot, a project in the Demobots committee of IEEE RAS. Chessbot is an automated chess-playing robot using a two-axis electromagnet gantry system to move magnetic chess pieces and an MQTT communication architecture that processes the controls and logic of the robot, such as evaluating the current state of the chess pieces and making chess engine API calls. However, the states of chess pieces are enclosed within the robot’s game simulation program, and it needed a physical interface to provide the player real-time visualization of the game simulation and control commands over the robot if the game needs to be halted.
-
-        The interface and display was implemented with Little Video Graphics Library, a low-power and low-memory embedded graphics framework, and MQTT topic subscriptioms that read from the chessboard state topic and write to the stepper motor topic in order to display the locations of the current chess pieces and allow users to pause the game or home the gantry system back to the origin.
-
-        Throughout the robot’s development, I also collaborated with the electrical team in assembling our custom PCBs, as well as the mechanical team in prototyping a chassis for the robot and harnessing the wires and hardware components in the chassis.
-
-        <a href="https://ras.ece.utexas.edu">https://ras.ece.utexas.edu</a>
     </p>
+
+    <p>The interface and display was implemented with Little Video Graphics Library, a low-power and low-memory embedded graphics framework, and MQTT topic subscriptioms that read from the chessboard state topic and write to the stepper motor topic in order to display the locations of the current chess pieces and allow users to pause the game or home the gantry system back to the origin.
+    </p>
+
+    <p>Throughout the robot’s development, I also collaborated with the electrical team in assembling our custom PCBs, as well as the mechanical team in prototyping a chassis for the robot and harnessing the wires and hardware components in the chassis.
+    </p>
+
+    <a href="https://ras.ece.utexas.edu">Check out Chessbot on IEEE RAS's website</a>
   </section>
 
 </body>

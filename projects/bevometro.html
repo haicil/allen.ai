@@ -35,6 +35,12 @@
       transform: scale(1.1);
     }
 
+    .underlined-title {
+      border-bottom: 2px solid black;
+      padding-bottom: 0.3em;
+      margin-bottom: 1.2em;
+    }
+
     a {
       color: black;
       text-decoration: none;
@@ -54,13 +60,22 @@
       margin-bottom: 1rem;
     }
 
+    .main-image img {
+      width: 100%;
+      max-width: 900px;
+      max-height: 250px;
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
     section {
       margin-bottom: 2rem;
-      line-height: 1.15;
+      line-height: 1.6;
     }
 
     section p {
-      line-height: 1.15;
+      font-weight: 400;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -70,20 +85,33 @@
     <img src="../images/logo.png" alt="Allen Ai logo">
   </a>
 
-  <a href="../index.html">← Back to Projects</a>
+  <a href="../index.html" style="display:inline-block; margin-top:3.5rem;">← Back to Projects</a>
 
-  <img src="../images/bevometro.jpg" alt="BevoMetro" class="hero">
+  <div style="height: 0.4rem;"></div>
 
   <h1>BevoMetro</h1>
   <h2>03/2025 - 04/2025 </h2>
 
-  <section>
-    <h2>Overview</h2>
-    <p>I collaborated with a team to co-develop a solution of an autonomous tram that travels around the UT campus as an efficient, convenient, and accessible transit prototype for the annual Operation Ramshorn project competition organized by the Ramshorn Scholars Program. The tram is designed to travel along an established path that loops around the campus, and the detects and stops for obstructions, pedestratians, and its routine pickup and dropoff stations.
+  <div class="main-image">
+    <img src="../images/bevometro.jpg" alt="BevoMetro" class="hero">
+  </div>
 
-        For our demoable prototype, I designed the embedded control system and acuation of the tram using an ESP32, motor driver, IR reflectance sensor, sonar sensors, and TT DC motors, programmed the tram navigation and obstacle detection software, and organized subsystem integrations with the aseembly of the tram. At the end of development, we compiled our engineering process and development documentation and we presented our project to 5+ faculty judges in the 2025 Operation Ramshorn Project Showcase, where our project won the "Community Favorite Award".
+  <section>
+    <div class="underlined-title">
+      <h2>Overview</h2>
+    </div>
+
+    <p>I collaborated with a team to co-develop a solution of an autonomous tram that travels around the UT campus as an efficient, convenient, and accessible transit prototype for the annual Operation Ramshorn project competition organized by the Ramshorn Scholars Program. The tram is designed to travel along an established path that loops around the campus, and the detects and stops for obstructions, pedestratians, and its routine pickup and dropoff stations.
     </p>
-    <h2?>Video Demo</h2>
+
+    <p>For our demoable prototype, I designed the embedded control system and acuation of the tram using an ESP32, motor driver, IR reflectance sensor, sonar sensors, and TT DC motors, programmed the tram navigation and obstacle detection software, and organized subsystem integrations with the aseembly of the tram. At the end of development, we compiled our engineering process and development documentation and we presented our project to 5+ faculty judges in the 2025 Operation Ramshorn Project Showcase, where our project won the "Community Favorite Award".
+    </p>
+
+    <div style="height: 2.5rem;"></div>
+
+    <div class="underlined-title">
+      <h2>Video Demo</h2>
+    </div>
     <video
     controls
     autoplay

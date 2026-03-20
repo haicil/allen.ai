@@ -35,6 +35,12 @@
       transform: scale(1.1);
     }
 
+    .underlined-title {
+      border-bottom: 2px solid black;
+      padding-bottom: 0.3em;
+      margin-bottom: 1.2em;
+    }
+
     a {
       color: black;
       text-decoration: underline;
@@ -54,13 +60,39 @@
       margin-bottom: 1rem;
     }
 
+    .main-image img {
+      width: 100%;
+      max-width: 900px;
+      max-height: 250px;
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
     section {
       margin-bottom: 2rem;
-      line-height: 1.15;
+      line-height: 1.6;
     }
 
     section p {
-      line-height: 1.15;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      justify-items: center;
+      margin-top: 1.5rem;
+    }
+        
+    .image-grid img {
+      max-width: 450px;
+      width: 100%;
+      border-radius: 6px;
+      height: auto;
+      object-fit: cover;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -70,31 +102,47 @@
     <img src="../images/logo.png" alt="Allen Ai logo">
   </a>
 
-  <a href="../index.html">← Back to Projects</a>
+  <a href="../index.html" style="display:inline-block; margin-top:3.5rem;">← Back to Projects</a>
 
-  <img src="../images/rtc.png" alt="Offline Real-Time Clock Back Model" class="hero">
+  <div style="height: 0.4rem;"></div>
 
   <h1>Offline Real-Time Clock</h1>
   <h2>10/2025 - Present</h2>
 
+  <div class="main-image">
+    <img src="../images/rtc.png" alt="Offline Real-Time Clock Back Model" class="hero">
+  </div>
+
   <section>
-    <h2>Overview</h2>
+    <div class="underlined-title">
+      <h2>Overview</h2>
+    </div>
+
     <p>I designed a real-time clock board with a supercapacitor power source in KiCad to be used for SoM clock synchronization
         in GHOST, UT Austin’s VEX robotics team. GHOST use Jetson Orin Nanos as SoMs to deploy the team’s CV stack and automation,
         but the Orin’s internal clocks are misaligned when not connected to internet. The real-time clock board aims to address the
         issue by updating Orin’s internal clock via I2C with pre-tuned crystal oscillations.
+    </p>
 
-        The design utilizes a PCF8563 real-time clock, LFXTAL016178 crystal, CE5R5505HF-ZJ 5 F double-layer supercapacitor, and a
+    <p>The design utilizes a PCF8563 real-time clock, LFXTAL016178 crystal, CE5R5505HF-ZJ 5 F double-layer supercapacitor, and a
         RB751V-40X_R1_00001 Schottky diode. Throughout the design process, I researched potential double-layer supercapacitor values
         to achieve a long operating time of the supercapacitor as a backup power source. With the current set of supercapacitor values
         (5 F, 15 Ohm ESR, 1 uA max current draw from PCF8563), it could operate for 3+ months. I also aimed to minimize the board size
         as much as possible to allow direct GPIO pin connection to the Orin and reduce surrounding system interference.
     </p>
+
     <a href="https://github.com/VEXU-GHOST/ghost_kicad">VEXU GHOST PCB Github Repository</a>
-    <h2>Images</h2>
-    <img src="../images/rtc-4.png" alt="Offline Real-Time Clock Front Model" class="hero">
-    <img src="../images/rtc-2.png" alt="Offline Real-Time Clock Schematic" class="hero">
-    <img src="../images/rtc-3.png" alt="Offline Real-Time Clock PCB" class="hero">
+
+    <div style="height: 2.5rem;"></div>
+
+    <div class="underlined-title">
+      <h2>Images</h2>
+    </div>
+    <div class="image-grid">
+      <img src="../images/rtc-4.png" alt="Offline Real-Time Clock Front Model" class="hero">
+      <img src="../images/rtc-2.png" alt="Offline Real-Time Clock Schematic" class="hero">
+      <img src="../images/rtc-3.png" alt="Offline Real-Time Clock PCB" class="hero">
+    </div>
   </section>
 
 </body>
