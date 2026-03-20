@@ -43,7 +43,7 @@
 
     a {
       color: black;
-      text-decoration: underline;
+      text-decoration: none;
       font-weight: 500;
       margin-bottom: 2rem
     }
@@ -84,6 +84,10 @@
       margin-bottom: 1rem;
     }
 
+    .related-link {
+      text-decoration: underline;
+    }
+
     .image-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -108,7 +112,7 @@
     <img src="../images/logo.png" alt="Allen Ai logo">
   </a>
 
-  <a href="../index.html" style="display:inline-block; margin-top:3.5rem;">← Back to Projects</a>
+  <a href="../index.html" style="display:inline-block; margin-top:2.5rem;">← Back to Projects</a>
 
   <div style="height: 0.4rem;"></div>
 
@@ -137,7 +141,9 @@
         Currently, we are programming a data acquisition firmware in C++ that is configurable to ROS2 publihing nodes to poll sensor data from deployment boards and send it to the Jetson Orin Nano via USB serial in order to process the sensor information for our robot's automation.
     </p>
 
-    <a href="https://github.com/VEXU-GHOST/ghost_kicad">VEXU GHOST PCB Github Repository</a>
+    <div class="related-link">
+      <a href="https://github.com/VEXU-GHOST/ghost_kicad">Check it out on the VEXU GHOST PCB Github Repository</a>
+    </div>
     
     <div style="height: 2.5rem;"></div>
 
