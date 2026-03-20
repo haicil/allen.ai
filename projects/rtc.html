@@ -8,11 +8,31 @@
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #f5f0e6;
+      background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
       color: black;
       max-width: 900px;
       margin: 0 auto;
       padding: 2rem;
+    }
+
+    .logo {
+      position: fixed;
+      top: 1.2rem;
+      left: 1.8rem;
+      z-index: 1000;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 70px;      /* adjust as needed */
+      width: 70px;
+      display: block;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .logo:hover img {
+      opacity: 0.8;
+      transform: scale(1.1);
     }
 
     a {
@@ -38,9 +58,17 @@
       margin-bottom: 2rem;
       line-height: 1.15;
     }
+
+        p {
+      line-height: 1.15;
+    }
   </style>
 </head>
 <body>
+
+  <a href="#top" class="logo">
+    <img src="images/logo.png" alt="Allen Ai logo">
+  </a>
 
   <a href="../index.html">← Back to Projects</a>
 
