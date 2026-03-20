@@ -54,28 +54,35 @@
       margin-bottom: 1rem;
     }
 
+    body img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
     section {
       margin-bottom: 2rem;
       line-height: 1.15;
     }
 
-    p {
+    section p {
       line-height: 1.15;
     }
   </style>
 </head>
 <body>
   
-  <a href="#top" class="logo">
-    <img src="images/logo.png" alt="Allen Ai logo">
+  <a href="../index.html" class="logo">
+    <img src="../images/logo.png" alt="Allen Ai logo">
   </a>
 
   <a href="../index.html">← Back to Projects</a>
 
-  <img src="../images/sensordev.png" alt="Sensor Development Board Front Model" class="hero">
-
   <h1>Base Development Board for Sensor Modules</h1>
   <h2>09/2025 - Present</h2>
+
+  <img src="../images/sensordev.png" alt="Sensor Development Board Front Model" class="hero">
 
   <section>
     <h2>Overview</h2>
@@ -88,6 +95,7 @@
         Currently, we are programming a data acquisition firmware in C++ that is configurable to ROS2 publihing nodes to poll sensor data from deployment boards and send it to the Jetson Orin Nano via USB serial in order to process the sensor information for our robot's automation.
     </p>
     <a href="https://github.com/VEXU-GHOST/ghost_kicad">VEXU GHOST PCB Github Repository</a>
+    <h2>Images</h2>
     <img src="../images/sensordev-4.png" alt="Sensor Development Board Back Model" class="hero">
     <img src="../images/sensordev-2.png" alt="Sensor Development Board Schematic" class="hero">
     <img src="../images/sensordev-3.png" alt="Sensor Development Board PCB" class="hero">
