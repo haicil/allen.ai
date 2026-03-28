@@ -128,7 +128,14 @@
       <h2>Overview</h2>
     </div>
 
-    <p>...</p>
+    <p>The sensor host board is another board part of the VEXU GHOST sensory system, and it is a communication host bridging the
+        sensor data acquisition between the sensor deployment boards and the Jetson Orin Nano which processes our sensor data to
+        run autonomous operations. I collaborated with other members of the GHOST hardware team to incorporate the differntial I2C
+        and daisy-chaining communication architecture into the host board, utilizing PCA9615 for differential pairing and buffering
+        of the I2C buses and an RP2040 to acquire and process the raw sensor data in real-time. I designed the layout for iteration
+        two in KiCad with improved differential pair routing, larger ground plane for improved return current paths, better component placement,
+         a more compact form factor with the change from RJ12 connectors to JST GH conenctors, and new testing point pins for easier debugging and validation of the board.
+    </p>
     <div class="related-link">
       <a href="https://github.com/VEXU-GHOST/ghost_kicad">Check it out on the VEXU GHOST PCB Github Repository</a>
     </div>
