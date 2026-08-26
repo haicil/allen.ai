@@ -1,0 +1,16 @@
+.social {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social a {
+  color: var(--text-muted);
+  font-size: 1.8rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social a:hover {
+  transform: translateY(-3px);
+  color: var(--text);
+}

@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.text {
+  flex: 2;
+}
+
+.imageWrap {
+  flex: 1;
+}
+
+.portrait {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  display: block;
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .imageWrap {
+    align-self: center;
+  }
+}

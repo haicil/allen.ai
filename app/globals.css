@@ -1,0 +1,70 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:           #141414;
+  --surface:      #1c1c1c;
+  --border:       rgba(255, 255, 255, 0.08);
+  --text:         #e8e8e8;
+  --text-muted:   rgba(255, 255, 255, 0.45);
+  --accent-blue:  #4281ff;
+  --accent-green: #4ade80;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-satoshi), sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--border);
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+section p {
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+section a {
+  color: var(--accent-blue);
+  text-underline-offset: 3px;
+}
+
+ul, ol {
+  padding-left: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  section h2 {
+    font-size: 1.6rem;
+  }
+}
