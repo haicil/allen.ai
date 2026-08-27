@@ -282,6 +282,10 @@
     height: 1.4em;
   }
 
+  .secondarySubtitle {
+    margin-top: 0.6rem;
+  }
+
   .subtitle {
     line-height: 1.75;
     min-height: 7em;
