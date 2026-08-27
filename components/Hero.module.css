@@ -79,6 +79,7 @@
 .hero {
   position: relative;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: rgba(20, 20, 20, 1);
 }
@@ -195,11 +196,13 @@
   animation: blink 0.7s step-end infinite;
 }
 
-/* Portrait image */
+/* Portrait image — aspect-ratio matches the source file (1138x702) so the
+   width/height clamps never fight each other and force a crop. */
 .heroImage {
-  height: clamp(220px, 52vh, 460px);
-  width: auto;
-  max-width: 38%;
+  width: clamp(240px, 34vw, 560px);
+  height: auto;
+  aspect-ratio: 1138 / 702;
+  max-height: 60vh;
   object-fit: cover;
   border-radius: 8px;
   opacity: 0;
@@ -238,4 +241,60 @@
   border-bottom: 2px solid rgba(255, 255, 255, 0.6);
   transform: rotate(45deg);
   margin-bottom: 1rem;
+}
+
+@media (max-width: 820px) {
+  .topBar {
+    padding: 0.85rem 1.2rem;
+  }
+
+  .topBarLogo img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .topBarNav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 0.4rem;
+    gap: 1rem;
+  }
+
+  .topBarNav a {
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+  }
+
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.75rem;
+    padding: 6rem 1.5rem 2rem;
+  }
+
+  .lineArrow,
+  .lineArrowActive {
+    margin-left: 0.5rem;
+    width: 1.2em;
+  }
+
+  .titleLogo {
+    height: 1.4em;
+  }
+
+  .subtitle {
+    line-height: 1.75;
+    min-height: 7em;
+    margin-top: 0.5rem;
+  }
+
+  .heroImage {
+    width: clamp(160px, 55vw, 260px);
+    max-height: 32vh;
+    margin-right: 0;
+  }
+
+  .scrollHint {
+    bottom: 1rem;
+  }
 }
