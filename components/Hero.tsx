@@ -13,7 +13,7 @@ const SECONDARY = SECONDARY_PARTS.join('\n')
 const SUBTITLE_LINES = [
   'Hardware Engineering',
   'Analog & Mixed-Signal Design',
-  'Physical Design & Verification',
+  'Design Verification',
   'Embedded Systems Development',
 ]
 const SUBTITLE_FULL = SUBTITLE_LINES.join('\n')
