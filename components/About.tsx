@@ -9,8 +9,8 @@ export default function About() {
         <div className={styles.text}>
           <p>
             I am a junior studying Electrical and Computer Engineering at The University of Texas at
-            Austin with a strong interest in hardware engineering, analog and mixed-signal IC design,
-            embedded systems, and firmware development. Experienced with the hardware development lifecycle,
+            Austin with a strong interest in hardware engineering, analog and mixed-signal design,
+            embedded systems, design verification, and firmware development. Experienced with the hardware development lifecycle,
             such as circuit design, schematic capture, layout, and testing and verification. Enjoys collaborating
             in cross-functional team environments to streamline development and contribute to a positive community.
           </p>
